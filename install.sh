@@ -3,7 +3,7 @@
 # It copies exactly one file to ~/.claude/output-styles/ and nothing else.
 set -euo pipefail
 
-REPO_RAW="https://raw.githubusercontent.com/OWNER/claude-code-hiberno-english/master"
+REPO_RAW="https://raw.githubusercontent.com/brgan-wp/claude-code-hiberno-english/master"
 STYLE_DIR="${HOME}/.claude/output-styles"
 STYLE_FILE="hiberno-english.md"
 

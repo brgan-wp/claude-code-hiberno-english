@@ -13,7 +13,7 @@ Companion to [claude-code-spinner-verbs-irish](https://github.com/tabman83/claud
 ## Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/OWNER/claude-code-hiberno-english/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/brgan-wp/claude-code-hiberno-english/master/install.sh | bash
 ```
 
 (Or, sensibly, read `install.sh` first — it copies one file to `~/.claude/output-styles/`.)
