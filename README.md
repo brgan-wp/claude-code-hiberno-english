@@ -2,13 +2,14 @@
 
 Make Claude Code *talk* like it's from Dublin. Not "top o' the mornin'" — the real thing.
 
-This is an [output style](https://docs.anthropic.com/en/docs/claude-code) for Claude Code that gives its conversational replies an authentic Hiberno-English register, built from a [linguistically-informed glossary](GLOSSARY.md) of the grammar that actually does the work: the after-perfect ("I'm after finding the bug"), clause-final *so* ("I'll restart it so"), *amn't*, *give out*, *your man*, and friends.
+A two-part voice pack for Claude Code:
+
+1. **The language** — an [output style](https://docs.anthropic.com/en/docs/claude-code) that gives Claude's conversational replies an authentic Hiberno-English register, built from a [linguistically-informed glossary](GLOSSARY.md) of the grammar that actually does the work: the after-perfect ("I'm after finding the bug"), clause-final *so* ("I'll restart it so"), *amn't*, *give out*, *your man*, and friends.
+2. **The spinner** — the Irish loading verbs from [tabman83/claude-code-spinner-verbs-irish](https://github.com/tabman83/claude-code-spinner-verbs-irish), so "Churning…" becomes "Wreckin' me head…". The installer **pulls his pack at install time**; his verbs stay in his repo (see [CREDITS.md](CREDITS.md)). If his repo is unreachable, the language still installs and the spinner is skipped.
 
 > **Sure look, the build's grand — all green. It was the config that was at fault, not your code. Will I push it so?**
 
 **The voice is chat-only by design.** The style carries a hard boundary: code, commits, file contents, emails, and anything drafted to be sent stay exactly as Claude would normally write them. It changes how Claude talks to you, not what it builds for you.
-
-Companion to [claude-code-spinner-verbs-irish](https://github.com/tabman83/claude-code-spinner-verbs-irish), which does the same for the spinner. Install both for the full experience.
 
 ## Install
 
@@ -16,17 +17,18 @@ Companion to [claude-code-spinner-verbs-irish](https://github.com/tabman83/claud
 curl -fsSL https://raw.githubusercontent.com/brgan-wp/claude-code-hiberno-english/master/install.sh | bash
 ```
 
-(Or, sensibly, read `install.sh` first — it copies one file to `~/.claude/output-styles/`.)
+(Or, sensibly, read `install.sh` first — it's commented and shows exactly what it touches.)
 
-Then in Claude Code:
+The installer:
+- copies the output style to `~/.claude/output-styles/`,
+- pulls tabman83's spinner verbs and merges them into `~/.claude/settings.json` (backed up first, nothing else touched),
+- sets `outputStyle` so the language is active on next launch.
 
-```
-/output-style Hiberno-English
-```
+Both load at session start, so **restart Claude Code** to see them. That's it — no `/output-style` step needed.
 
-### Manual install
+### Manual install (language only)
 
-Copy `output-styles/hiberno-english.md` to `~/.claude/output-styles/` and run `/output-style Hiberno-English`.
+Copy `output-styles/hiberno-english.md` to `~/.claude/output-styles/` and run `/output-style Hiberno-English`. For the spinner on its own, install [tabman83's pack](https://github.com/tabman83/claude-code-spinner-verbs-irish) directly.
 
 ## Uninstall
 
